@@ -2,7 +2,7 @@
 /**
  *  main - print if the number is zero, positive or negative
  *  Description - using the main function
- *  Return: 0.
+ *  Return: always 0.
  */
 int main(void)
 {
