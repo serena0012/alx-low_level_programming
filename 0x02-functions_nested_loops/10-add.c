@@ -1,11 +1,15 @@
-#include "_putchar.h"
+#include "main.h"
+#include <stdio.h>
 /**
  * add - a function that adds two integers and returns the result
  * @one: first number input
  * @two: second number input
  *  Return: one + two
  */
-int add(int one, int two)
+int main(void)
 {
-return (one + two);
+int n;
+n = add(89, 9);
+printf("%d\n", n);
+return (0);
 }
