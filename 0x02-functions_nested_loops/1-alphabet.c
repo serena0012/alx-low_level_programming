@@ -1,3 +1,7 @@
+/*
+ * File: 0-putchar.c
+ * Auth: Gbenga Elegbede
+ */
 #include "main.h"
 /**
  * Print_alphabets - a function that prints the alphabet  in lowercase
