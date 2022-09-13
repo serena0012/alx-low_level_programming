@@ -1,1 +1,1 @@
-A function that adds two integers and returns the result.
+A function that prints the alphabet, in lowercase, followed by a new line.
