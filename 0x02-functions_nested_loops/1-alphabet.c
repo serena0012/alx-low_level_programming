@@ -4,16 +4,16 @@
  */
 #include "main.h"
 /**
- * Print_alphabets - a function that prints the alphabet  in lowercase
- * follow by a new line
- * Return: always 0 (success)
+ * Print_alphabets - a function that prints alphabets, in lowercase
+ * follow by a new line.
+ * Return: void
  */
 void print_alphabet(void)
 {
-int n;
-for (n = 'a'; n <= 'z'; n++)
+char c;
+for (c = 'a'; c <= 'z'; c++)
 {
-_putchar(n);
+_putchar(c);
 }
 _putchar('\n');
 }
