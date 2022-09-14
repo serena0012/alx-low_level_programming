@@ -1,12 +1,8 @@
-/*
- * File: 0-putchar.c
- * Auth: Gbenga Elegbede
- */
 #include "main.h"
 /**
- * Print_alphabets - a function that prints alphabets, in lowercase
- * follow by a new line.
- * Return: void
+ * print_alphabet - prints alphabet from a-z
+ *
+ * Return: void.
  */
 void print_alphabet(void)
 {
@@ -17,5 +13,3 @@ _putchar(c);
 }
 _putchar('\n');
 }
-
-
