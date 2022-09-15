@@ -1,1 +1,1 @@
-create a file named 0-main.c
+This program prints the largest of three integers.
