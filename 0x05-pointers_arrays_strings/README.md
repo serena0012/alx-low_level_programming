@@ -1,1 +1,1 @@
-A function that convert a string to an integer.
+A function that prints n elements of an array of integers,
