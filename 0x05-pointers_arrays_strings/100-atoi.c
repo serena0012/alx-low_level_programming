@@ -1,8 +1,8 @@
-#include "main.h"
+#include "main.h"i
 /**
  * _atoi - function that convert a string to an integer
  * @s: string to convert
- * Return: int
+ * Return:the converted string
  */
 int _atoi(char *s)
 {
@@ -29,5 +29,5 @@ i++;
 }
 }
 signo *= -1;
-return (n * signo);
+return (n * signo)i;
 }
