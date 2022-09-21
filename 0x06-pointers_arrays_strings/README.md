@@ -1,1 +1,1 @@
-A function that encodes a string using rot13.
+A program that prints a[2] = 98
