@@ -1,1 +1,1 @@
-A function that encodes a string into 1337.
+A function thatencodes a string using rot13.
