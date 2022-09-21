@@ -2,25 +2,21 @@
 /**
  * leet - Encodes a string into 1337
  * @s: The string to encode
- *
  * Return: The encoded string
  */
 char *leet(char *s)
 {
-int a = 0, b = 0, l = 5;
-char r[5] = {'A', 'E', 'O', 'T', 'L'};
-char n[5] = {'4', '3', '0', '7', '1'};
-while (s[a])
+char *r = s;
+char a[] = { 'a', 'e', 'o', 't', 'l' };
+char n[] = { 4, 3, 0, 7, 1 };
+int i = 0;
+while (*s)
 {
-b = 0;
-while (b < l)
-{
-if (s[a] == r[b] || s[a] - 32 == r[b])
-{
-s[a] = n[b];
+for (i = 0; i < 5; i++)
+if (*s == a[i] || *s == a[i] - 32)
+*s = n[i] + '0';
 }
-b++;
+s++;
 }
-a++;
-return (s);
+return (r);
 }

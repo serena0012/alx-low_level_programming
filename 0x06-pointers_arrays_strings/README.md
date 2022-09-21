@@ -1,1 +1,1 @@
-A function that concatenates two strings.
+A function that encodes a string into 1337.
