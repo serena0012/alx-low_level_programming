@@ -1,22 +1,39 @@
-/*
- * File: 101-print_number.c
- * Auth: Gbenga Elegbede
- */
 #include "main.h"
 /**
- * print_number - Prints an integer.
- * @n: The integer to be printed.
+ * print_number - Prints any integer with putchar
+ * @n: number
+ * Return: void
  */
 void print_number(int n)
 {
-unsigned int x;
+unsigned int size = n;
+int digits = 0;
+int i;
+if (n < 0)
+size = -n;
+if (n == 0)
+digits = 1;
+while (size >= 1)
+{
+size = size / 10;
+digits++;
+}
+for (i = 0; i < digits; i++)
+{
+int pow = 1;
+int j;
+int d;
+for (j = 0; j < digits - i - 1; j++)
+{
+pow = pow * 10;
+}
+d = ((n / pow) % 10);
 if (n < 0)
 {
-_putchar('-');
-num = -num;
+d = -d;
+if (i == 0)
+_putchar(45);
 }
-if ((num / 10) > 0)
-print_number(num / 10);
-_putchar((num % 10) + '0');
+_putchar(48 + d);
 }
-
+}
