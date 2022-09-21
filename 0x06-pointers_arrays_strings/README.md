@@ -1,1 +1,1 @@
-A function thatencodes a string using rot13.
+A function that prints an integer.
