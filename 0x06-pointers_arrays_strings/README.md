@@ -1,1 +1,1 @@
-A program that encodes a string into 1337.
+A program that prints a[2] = 98,
