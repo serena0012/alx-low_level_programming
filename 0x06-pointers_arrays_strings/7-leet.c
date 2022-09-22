@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * encode a string
+ * leet - encode a string
  * @str: The string to encode
  * Return: The encoded string
  */
-char *leet(char *str)
+char *leet(char *str)/*leet function*/
 {
 int i, j;
 char c[] = "aAeEoOtTlL";
