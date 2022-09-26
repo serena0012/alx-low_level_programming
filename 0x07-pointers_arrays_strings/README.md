@@ -1,1 +1,1 @@
-A function that the chessboard.
+A  file that contains the password for the crackme2 executable.
