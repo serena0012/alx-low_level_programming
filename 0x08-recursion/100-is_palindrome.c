@@ -21,6 +21,7 @@ return (palind2(a + 1, l + 1));
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately
  */
+
 int palind3(char *a, int l)
 if (*a != *(a + l))
 return (0);
@@ -38,6 +39,7 @@ return (palind3(a + 1, l - 2));
 int is_palindrome(char *s)
 {
 int l;
+
 l = palind2(s, 0);
 return (palind3(s, l));
 }
