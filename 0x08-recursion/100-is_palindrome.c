@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /** palind2 - obtains length of a
  * @a: string
