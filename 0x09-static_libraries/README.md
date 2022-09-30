@@ -1,1 +1,1 @@
-Static library libmy.a file
+Creating static libraries.
