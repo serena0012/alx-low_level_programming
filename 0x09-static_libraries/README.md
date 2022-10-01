@@ -1,1 +1,1 @@
-Creating stattic libraries.
+Creating stattic libraries..
