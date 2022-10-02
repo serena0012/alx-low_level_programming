@@ -3,7 +3,9 @@
  * File: 100-times_table.c
  * Auth: Gbenga Elegbede
  */
+
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_times_table - prints the times table for n.
