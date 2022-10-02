@@ -1,8 +1,10 @@
+
 /*
  * File: 100-times_table.c
  * Auth: Gbenga Elegbede
  */
 #include "main.h"
+
 /**
  * print_times_table - prints the times table for n.
  * @n: The multiplication table requested.
