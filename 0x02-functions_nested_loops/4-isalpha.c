@@ -7,8 +7,9 @@
 /**
  * _isalpha - this program checks wether a character
  * is from the English alphabet.
+ * @c:character
  * Return: 1 for English Character
- * 0 if the character is not English
+ *         0 if the character is not English
  */
 int _isalpha(int c)
 {
