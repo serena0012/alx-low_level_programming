@@ -15,7 +15,7 @@
  * You can use an unlimited number of coins of values 25, 10, 5, 2, and 1 cent
  *
  * @argc: legenth of argv
- * 
+ *
  * @argv: number of argument
  *
  * Return: Always 0
