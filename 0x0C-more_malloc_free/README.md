@@ -1,1 +1,1 @@
-A function that allocates memory using malloc.
+A function that  that concatenates two strings.
