@@ -10,7 +10,7 @@
  *  Return: If nmemb = 0, size = 0, or the function fails - NULL.
  *  Otherwise - a pointer to the allocated memory.
  */
-void *_calloc(unsigned int nmemb, unsigned int s
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
 void *mem;
 char *filler;
