@@ -3,43 +3,30 @@
 #include <stdlib.h>
 
 /**
- * string_nconcat - len of 1st str, len of 2nd str, if n < 2nd, 2nd = n
- * 2nd + 1st = total len, malloc + null byte, loop to insert into temp arr
- * @s1: input one
- * @s2: input two
- * @n: s2's number of bytes
- * Return: 0
+ * array_range - get len, malloc * len
+ * loop size of len to insert min++ into new arr
+ * @min: min input
+ * @max: max input
+ * Return: pointer to new arr of ints
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
-char *arr;
-unsigned int i, j, co, co_2;
-if (s1 == NULL)
-s1 = "";
-if (s2 == NULL)
-s2 = "";
-for (i = 0; s1[i] != '\0'; i++)
+int *array_range(int min, int max)
+{
+int *arr;
+int i, len;
+
+if (min > max)
+return (NULL);
+
+for (len = 0; len <= (max - min); len++)
 {
 }
-for (j = 0; s2[j] != '\0'; j++)
-{
-}
-
-if (n < j)
-j = n;
-
-j += i;
-arr = malloc(sizeof(char *) * (j + 1));
-
+arr = malloc(sizeof(int *) * len);
 if (arr == NULL)
 return (NULL);
-for (co = 0; co < i; co++)
-arr[co] = s1[co];
-for (co_2 = 0; co < j; co_2++)
-{arr[co] = s2[co_2];
-co++;
+
+for (i = 0; i <= len; i++)
+{
+arr[i] = min++;
 }
-co++;
-arr[co] = '\0';
 return (arr);
 }
-
