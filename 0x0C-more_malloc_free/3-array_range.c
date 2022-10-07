@@ -20,6 +20,8 @@ return (NULL);
 
 size = max - min + 1;
 
+array = malloc(sizeof(int) * size);
+
 if (!array)
 return (NULL);
 
