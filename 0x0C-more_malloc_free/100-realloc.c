@@ -26,6 +26,13 @@ mem = malloc(new_size);
 
 if (!mem)
 return (NULL);
+return (mem);
+}
+
+if (new_size == 0 && ptr != NULL)
+{
+free(ptr);
+return (NULL);
 }
 
 ptr_copy = ptr;
