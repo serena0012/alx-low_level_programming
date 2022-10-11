@@ -1,48 +1,95 @@
-#include "dog.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include "dog.h"
+
+int _strLen(char *str);
+void fillMem(char *str, int strLen, char *dest);
 
 /**
- * new_dog - creates a new dog structure
- * @name: Dog's name
- * @age: Dog's age
- * @owner: Dog's owner
- * Return: returns a pointer to newly created dog structure
+ * new_dog - create a new dog
+ *
+ * @name: Name of dog
+ *
+ * @age: age of dog
+ *
+ * @owner: owner of dog
+ *
+ * Return: Pointer to the newly created dog (SUCCESS) or
+ * NULL if sufficient memory was available (FAILURE)
  */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *new_dog;
-char *cpyname, *cpyowner;
-int len_name = 0, len_owner = 0, i;
+dog_t *n_dog;
+int nameLen, ownerLen;
 
-if (name == NULL || owner == NULL)
+n_dog = malloc(sizeof(dog_t));
+
+if (n_dog == NULL)
 return (NULL);
 
-while (name[len_name])
-len_name++;
-while (owner[len_owner])
-len_owner++;
+nameLen = _strLen(name);
+n_dog->name = malloc(sizeof(char) * nameLen + 1);
 
-new_dog = malloc(sizeof(dog_t));
-if (new_dog == NULL)
+if (n_dog->name == NULL)
+{
+free(n_dog);
 return (NULL);
-
-cpyname = malloc(len_name + 1);
-if (cpyname == NULL)
-return (NULL);
-for (i = 0; name[i]; i++)
-cpyname[i] = name[i];
-cpyname[i] = '\0';
-
-cpyowner = malloc(len_owner + 1);
-if (cpyowner == NULL)
-return (NULL);
-for (i = 0; owner[i]; i++)
-cpyowner[i] = owner[i];
-cpyowner[i] = '\0';
-
-new_dog->name = cpyname;
-new_dog->age = age;
-new_dog->owner = cpyowner;
-return (new_dog);
 }
+
+fillMem(name, nameLen, n_dog->name);
+
+ownerLen = _strLen(owner);
+n_dog->owner = malloc(sizeof(char) * ownerLen + 1);
+
+if (n_dog->owner == NULL)
+{
+free(n_dog);
+free(n_dog->name);
+return (NULL);
+}
+
+fillMem(owner, ownerLen, n_dog->owner);
+
+n_dog->age = age;
+
+return (n_dog);
+}
+
+/**
+ * _strLen - Get length of a string
+ *
+ * @str: Astring
+ *
+ * Return: Length of string
+ */
+
+int _strLen(char *str)
+{
+int i = 0;
+
+while (str[i])
+i++;
+
+return (i);
+}
+
+/**
+ * fillMem - copy string literal to allocated memory
+ *
+ * @str: string literal
+ *
+ * @strLen: @str length
+ *
+ * @dest: The allocated memory
+ */
+
+void fillMem(char *str, int strLen, char *dest)
+{
+int i;
+
+for (i = 0; i < strLen; i++)
+dest[i] = str[i];
+
+dest[i] = '\0';
+}
+
