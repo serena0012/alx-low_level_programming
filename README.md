@@ -37,6 +37,8 @@ and more!
 
 ## Projects
 3. [0x02-functions_nested_loops](https://github.com/serena0012/alx-low_level_programming/tree/master/0x02-functions_nested_loops)
+4. [0x03-debugging](https://github.com/serena0012/alx-low_level_programming/tree/master/0x03-debugging)
+5. [0x04-more_functions_nested_loops](https://github.com/serena0012/alx-low_level_programming/tree/master/0x04-more_functions_nested_loops)
 
 
 
