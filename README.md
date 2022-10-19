@@ -1,4 +1,4 @@
-# alx-low_level_programming & Algorithms
+# Alx Low Level Programming & Algorithms
 
 <img src="https://user-images.githubusercontent.com/111250548/196811919-64bea518-5674-46ee-a363-e6a3c15c36ca.png" width="500" height="500">
 
@@ -36,6 +36,7 @@ and more!
 * gcc  (-Wall -Werror -Wextra -pedantic -std=gnu89)
 
 ## Projects
+3. [0x02-functions_nested_loops](https://github.com/serena0012/alx-low_level_programming/tree/master/0x02-functions_nested_loops)
 
 
 
