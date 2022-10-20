@@ -53,6 +53,7 @@ and more!
 17. [0x0F-function_pointers](https://github.com/serena0012/alx-low_level_programming/tree/master/0x0F-function_pointer)
 18. [0x10-variadic_functions](https://github.com/serena0012/alx-low_level_programming/tree/master/0x10-variadic_functions)
 19. [0x11. C - printf](https://github.com/code-vibe/printf)
+20. [0x12-singly_linked_lists](https://github.com/serena0012/alx-low_level_programming/tree/master/0x12-singly_linked_lists)
 
 
 
