@@ -1,0 +1,90 @@
+From cb02e7da0a0f1d9ec7bf7101853605604dc7f064 Mon Sep 17 00:00:00 2001
+From: Gbenga Elegbede <jonathangnenga@gmail.com>
+Date: Fri, 21 Oct 2022 05:39:27 -0700
+Subject: [PATCH 1/2] New update
+
+---
+ 0x12-singly_linked_lists/0-print_list.c       | 28 +++++++++---------
+ .../101-hello_holberton.asm                   | 29 ++++++++++---------
+ 2 files changed, 29 insertions(+), 28 deletions(-)
+
+diff --git a/0x12-singly_linked_lists/0-print_list.c b/0x12-singly_linked_lists/0-print_list.c
+index ce03698..a7593a1 100644
+--- a/0x12-singly_linked_lists/0-print_list.c
++++ b/0x12-singly_linked_lists/0-print_list.c
+@@ -1,22 +1,22 @@
+-#include "lists.h"
+ #include <stdio.h>
++#include "lists.h"
++#include <stdlib.h>
+ 
+ /**
+- * print_list - prints all the elements of a list_t list
+- * @h: pointer to the start of the list
++ * print_list - Print all elements of a list_t list
++ * @h: Pointer to the first element of the list
+  *
+- * Return: number of nodes in the list
++ * Return: Number of elements in the list
+  */
++
+ size_t print_list(const list_t *h)
+ {
+-	const list_t *tmp;
+-	unsigned int i;
+-
+-	tmp = h;
+-	for (i = 0; tmp; i++)
+-	{
+-		printf("[%u] %s\n", tmp->len, tmp->str);
+-		tmp = tmp->next;
+-	}
+-	return (i);
++size_t count;
++if (h == NULL)
++return (0);
++count = 1;
++printf("[%d] %s\n", h->len, h->str);
++if (h->next != NULL)
++count += print_list(h->next);
++return (count);
+ }
+diff --git a/0x12-singly_linked_lists/101-hello_holberton.asm b/0x12-singly_linked_lists/101-hello_holberton.asm
+index 82bb9b3..b66efc1 100644
+--- a/0x12-singly_linked_lists/101-hello_holberton.asm
++++ b/0x12-singly_linked_lists/101-hello_holberton.asm
+@@ -1,16 +1,17 @@
+-bal main
++section .data
++        msg: db "Hello, Holberton", 0x0a
++        msglen equ $-msg
+ 
+-	section .text
+-main:
+-	mov rax, 1
+-	mov rdi, 1
+-	mov rsi, message
+-	mov rdx, 17
+-	syscall
+-
+-	mov eax, 60
+-	xor rdi, rdi
+-	syscall
++section .text
++        global main
+ 
+-message:
+-	db "Hello, Holberton", 10 ; 10 is the ASCII code for a new line
++main:
++        ; write HelloHolberton to screen
++	mov eax, 1 ; syscall for write
++        mov edi, 1
++        mov rsi, msg
++        mov edx, msglen
++        syscall
++        mov eax, 60 ; 60 is exit
++        xor edi, edi ; exit (0)
++        syscall
+-- 
+2.25.1
+
