@@ -1,16 +1,17 @@
-bal main
+section .data
+        msg: db "Hello, Holberton", 0x0a
+        msglen equ $-msg
 
-	section .text
+section .text
+        global main
+
 main:
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, message
-	mov rdx, 17
-	syscall
-
-	mov eax, 60
-	xor rdi, rdi
-	syscall
-
-message:
-	db "Hello, Holberton", 10 ; 10 is the ASCII code for a new line
+        ; write HelloHolberton to screen
+	mov eax, 1 ; syscall for write
+        mov edi, 1
+        mov rsi, msg
+        mov edx, msglen
+        syscall
+        mov eax, 60 ; 60 is exit
+        xor edi, edi ; exit (0)
+        syscall
