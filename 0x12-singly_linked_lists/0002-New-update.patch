@@ -1,0 +1,162 @@
+From 142f89200c9b45ae30ccf33d990b9d4bf5e3d23d Mon Sep 17 00:00:00 2001
+From: serena00123 <jonathanelegbede@gmail.com>
+Date: Fri, 21 Oct 2022 18:20:32 +0530
+Subject: [PATCH 2/2] New update
+
+---
+ 0x12-singly_linked_lists/0-print_list.c       | 30 ++++++-----
+ 0x12-singly_linked_lists/0001-New-fixed.patch | 39 ++++++++++++++
+ 0x12-singly_linked_lists/0002-new-fix.patch   | 52 +++++++++++++++++++
+ 3 files changed, 107 insertions(+), 14 deletions(-)
+ create mode 100644 0x12-singly_linked_lists/0001-New-fixed.patch
+ create mode 100644 0x12-singly_linked_lists/0002-new-fix.patch
+
+diff --git a/0x12-singly_linked_lists/0-print_list.c b/0x12-singly_linked_lists/0-print_list.c
+index a7593a1..6be39bd 100644
+--- a/0x12-singly_linked_lists/0-print_list.c
++++ b/0x12-singly_linked_lists/0-print_list.c
+@@ -1,22 +1,24 @@
+ #include <stdio.h>
+ #include "lists.h"
+-#include <stdlib.h>
+ 
+ /**
+- * print_list - Print all elements of a list_t list
+- * @h: Pointer to the first element of the list
+- *
+- * Return: Number of elements in the list
+- */
++* print_list - prints to standard output
++* @h: A node in list_t
++* Return: The number of nodes
++*/
+ 
+ size_t print_list(const list_t *h)
+ {
+-size_t count;
+-if (h == NULL)
+-return (0);
+-count = 1;
+-printf("[%d] %s\n", h->len, h->str);
+-if (h->next != NULL)
+-count += print_list(h->next);
+-return (count);
++	size_t num_of_nodes = 0;
++
++	while (h)
++	{
++		if (h->str == NULL)
++			printf("[0] (nil)\n");
++		else
++			printf("[%u] %s\n", h->len, h->str);
++		h = h->next;
++		num_of_nodes++;
++	}
++	return (num_of_nodes);
+ }
+diff --git a/0x12-singly_linked_lists/0001-New-fixed.patch b/0x12-singly_linked_lists/0001-New-fixed.patch
+new file mode 100644
+index 0000000..26b7c54
+--- /dev/null
++++ b/0x12-singly_linked_lists/0001-New-fixed.patch
+@@ -0,0 +1,39 @@
++From 7ae9a7a404c85464630dcba261787131a8ad09d3 Mon Sep 17 00:00:00 2001
++From: Gbenga Elegbede <jonathangnenga@gmail.com>
++Date: Thu, 20 Oct 2022 06:15:18 -0700
++Subject: [PATCH 1/2] New fixed
++
++---
++ 0x12-singly_linked_lists/4-free_list.c | 18 +++++++-----------
++ 1 file changed, 7 insertions(+), 11 deletions(-)
++
++diff --git a/0x12-singly_linked_lists/4-free_list.c b/0x12-singly_linked_lists/4-free_list.c
++index 2c2caa9..b360371 100644
++--- a/0x12-singly_linked_lists/4-free_list.c
+++++ b/0x12-singly_linked_lists/4-free_list.c
++@@ -9,15 +9,11 @@
++  */
++ void free_list(list_t *head)
++ {
++-	list_t *current, *next;
++-
++-	current = head;
++-	while (current != NULL)
++-	{
++-		next = current->next;
++-		free(current->str);
++-		free(current);
++-		current = next;
++-	}
++-
+++if (head != NULL)
+++{
+++if (head->next != NULL)
+++free_list(head->next);
+++free(head->str);
+++free(head);
+++}
++ }
++-- 
++2.25.1
++
+diff --git a/0x12-singly_linked_lists/0002-new-fix.patch b/0x12-singly_linked_lists/0002-new-fix.patch
+new file mode 100644
+index 0000000..ad53d61
+--- /dev/null
++++ b/0x12-singly_linked_lists/0002-new-fix.patch
+@@ -0,0 +1,52 @@
++From 2d5c72947583ccf111a126d2b38a10f93335371c Mon Sep 17 00:00:00 2001
++From: serena00123 <jonathanelegbede@gmail.com>
++Date: Thu, 20 Oct 2022 16:21:51 +0100
++Subject: [PATCH 2/2] new fix
++
++---
++ 0x12-singly_linked_lists/0-print_list.c | 27 ++++++++++++-------------
++ 1 file changed, 13 insertions(+), 14 deletions(-)
++
++diff --git a/0x12-singly_linked_lists/0-print_list.c b/0x12-singly_linked_lists/0-print_list.c
++index ce03698..6452e58 100644
++--- a/0x12-singly_linked_lists/0-print_list.c
+++++ b/0x12-singly_linked_lists/0-print_list.c
++@@ -1,22 +1,21 @@
++-#include "lists.h"
++ #include <stdio.h>
++-
+++#include "lists.h"
+++#include <stdlib.h>
++ /**
++- * print_list - prints all the elements of a list_t list
++- * @h: pointer to the start of the list
+++ * print_list - Print all elements of a list_t list
+++ * @h: Pointer to the first element of the list
++  *
++- * Return: number of nodes in the list
+++ * Return: Number of elements in the list
++  */
++ size_t print_list(const list_t *h)
++ {
++-	const list_t *tmp;
++-	unsigned int i;
+++	size_t count;
++ 
++-	tmp = h;
++-	for (i = 0; tmp; i++)
++-	{
++-		printf("[%u] %s\n", tmp->len, tmp->str);
++-		tmp = tmp->next;
++-	}
++-	return (i);
+++	if (h == NULL)
+++		return (0);
+++	count = 1;
+++	printf("[%d] %s\n", h->len, h->str);
+++	if (h->next != NULL)
+++		count += print_list(h->next);
+++	return (count);
++ }
++-- 
++2.25.1
++
+-- 
+2.25.1
+
