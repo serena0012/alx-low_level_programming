@@ -9,7 +9,7 @@
  *       and types written in the 0x13-more_singly_linked_lists directory.
  */
 
-#include <stdio.h>
+
 #include <stdlib.h>
 
 /**
